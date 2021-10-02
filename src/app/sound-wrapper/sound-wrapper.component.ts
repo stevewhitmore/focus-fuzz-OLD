@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { SoundService } from '../services/sound.service';
 
@@ -8,11 +8,11 @@ import { SoundService } from '../services/sound.service';
   styleUrls: ['./sound-wrapper.component.scss']
 })
 export class SoundWrapperComponent implements OnInit {
-
+  @Input() audioFile: any
   isPaused = true;
   soundName = 'No Name'
   volume = new FormControl()
-  audioObj: any;
+  sound: any
 
   // @ViewChild('soundItem', { static: true }) soundItem: ElementRef
 
@@ -21,31 +21,30 @@ export class SoundWrapperComponent implements OnInit {
   ngOnInit(): void {
     this.getSoundFile()
 
-    this.audioObj.volume = 0.5
-
-    this.volume.setValue('50')
+    this.sound = this.audioFile.source
+    this.soundName = this.audioFile.name
+    this.volume.setValue( this.sound.volume * 100 )
   }
 
   getSoundFile() {
-    this.audioObj = new Audio('./assets/sound-files/north-sea.wav');
   }
 
   playPause() {
     this.isPaused = !this.isPaused
-    if (this.audioObj.paused) {
-      this.audioObj.play()
+    if (this.sound.paused) {
+      this.sound.play()
     } else {
-      this.audioObj.pause()
+      this.sound.pause()
     }
     console.log(this.volume.value)
   }
 
   adjustVolume(slider: any) {
-    this.audioObj.volume = this.volume.value / 100
+    this.sound.volume = this.volume.value / 100
     // this.volume.registerOnChange
     
     // console.log(slider)
-    console.log(this.audioObj.volume)
+    console.log(this.volume.value)
     // this.audioObj
   }
 

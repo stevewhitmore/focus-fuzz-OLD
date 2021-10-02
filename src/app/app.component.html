@@ -1,0 +1,7 @@
+<h1>Focus Fuzz</h1>
+
+<section>
+    <div *ngFor="let file of audioFiles$ | async">
+        <ff-sound-wrapper [audioFile]="file"></ff-sound-wrapper>
+    </div>
+</section>

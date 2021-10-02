@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { SoundService } from './services/sound.service';
 
 @Component({
   selector: 'ff-root',
-  template: `
-    <h1>Focus Fuzz</h1>
-    <section>
-      <ff-sound-wrapper></ff-sound-wrapper>
-    </section>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   
+  audioFiles$: Observable<any> = new Observable()
+
   constructor(private soundService: SoundService) { }
 
   ngOnInit() {
-    
+    this.audioFiles$ = this.soundService.getSoundFiles();
   }
 
 }
