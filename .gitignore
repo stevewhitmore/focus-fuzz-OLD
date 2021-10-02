@@ -45,5 +45,5 @@ testem.log
 Thumbs.db
 
 
-./src/assets/sound-files/
-./src/assets/sound-files/*
+src/assets/sound-files/
+src/assets/sound-files/*
