@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { SoundService } from '../services/sound.service';
 
@@ -7,7 +7,7 @@ import { SoundService } from '../services/sound.service';
   templateUrl: './sound-wrapper.component.html',
   styleUrls: ['./sound-wrapper.component.scss']
 })
-export class SoundWrapperComponent implements OnInit {
+export class SoundWrapperComponent implements OnChanges {
   @Input() audioFile: any
   isPaused = true;
   soundName = 'No Name'
@@ -18,15 +18,15 @@ export class SoundWrapperComponent implements OnInit {
 
   constructor(private soundService: SoundService) { }
 
-  ngOnInit(): void {
-    this.getSoundFile()
+  ngOnChanges(changes: SimpleChanges): void {
+    const soundChanges = changes['audioFile'].currentValue
 
-    this.sound = this.audioFile.source
-    this.soundName = this.audioFile.name
-    this.volume.setValue( this.sound.volume * 100 )
-  }
-
-  getSoundFile() {
+    if (soundChanges && soundChanges.source) {
+      console.log(soundChanges)
+      this.sound = this.audioFile.source
+      this.soundName = this.audioFile.name
+      this.volume.setValue( this.sound.volume * 100 )
+    }
   }
 
   playPause() {

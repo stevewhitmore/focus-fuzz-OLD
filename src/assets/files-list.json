@@ -1,0 +1,16 @@
+[
+    {
+       "id":1,
+       "name":"North Sea",
+       "source":"../../assets/sound-files/north-sea.wav",
+       "creditLocation":"https://freesound.org/people/Soarer/sounds/13793/",
+       "creditAuthor":"Soarer"
+    },
+    {
+       "id":2,
+       "name":"Thunder Rain",
+       "source":"../../assets/sound-files/north-sea.wav",
+       "creditLocation":"https://freesound.org/people/klangfabrik/sounds/194209/",
+       "creditAuthor":"klangfabrik"
+    }
+]

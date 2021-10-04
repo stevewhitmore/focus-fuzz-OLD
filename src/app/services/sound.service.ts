@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { Observable, of } from 'rxjs';
 import { map , tap} from 'rxjs/operators'
-
-import { audioFiles } from 'src/assets/sound-files/files-list';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SoundService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getSoundFiles() {
-    return of(audioFiles()).pipe(
-      // map((item: any) => item.source.volume = 0.5)
-      tap(console.log)
+  getSoundFiles(): Observable<any[]> {
+    return this.http.get('assets/files-list.json').pipe(
+      map((soundObjects: any) => soundObjects.map((item: any) => item.sound = new Audio(item.sound)))
     )
+    
+    // return of(audioFiles()).pipe(
+    //   // map((item: any) => item['source'].volume = 0.5),
+    //   map((soundObjects: any) => soundObjects.map((item: any) => console.log(item))),
+    // )
   }
 }
