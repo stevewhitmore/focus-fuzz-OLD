@@ -12,12 +12,12 @@
         </button>
     </ng-template>
 
-    <h2>{{soundName}}</h2>
-
     <input type="range" 
             id="volume-control"
             #slider 
             (change)="adjustVolume(slider)"
             [formControl]="volume">
     
+    <h2>{{soundName}}</h2>
+    <p>[Source: {{audioFile.creditAuthor}} - {{audioFile.creditLocation}}]</p>
 </section>

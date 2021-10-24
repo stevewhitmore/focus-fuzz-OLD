@@ -1,6 +1,5 @@
-import { Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { SoundService } from '../services/sound.service';
 
 @Component({
   selector: 'ff-sound-wrapper',
@@ -14,18 +13,14 @@ export class SoundWrapperComponent implements OnChanges {
   volume = new FormControl()
   sound: any
 
-  // @ViewChild('soundItem', { static: true }) soundItem: ElementRef
-
-  constructor(private soundService: SoundService) { }
-
   ngOnChanges(changes: SimpleChanges): void {
     const soundChanges = changes['audioFile'].currentValue
 
     if (soundChanges && soundChanges.source) {
       console.log(soundChanges)
-      this.sound = this.audioFile.source
+      this.sound = new Audio(this.audioFile.source)
       this.soundName = this.audioFile.name
-      this.volume.setValue( this.sound.volume * 100 )
+      this.volume.setValue( 50 )
     }
   }
 
@@ -41,11 +36,7 @@ export class SoundWrapperComponent implements OnChanges {
 
   adjustVolume(slider: any) {
     this.sound.volume = this.volume.value / 100
-    // this.volume.registerOnChange
-    
-    // console.log(slider)
     console.log(this.volume.value)
-    // this.audioObj
   }
 
 }
