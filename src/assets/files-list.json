@@ -12,5 +12,12 @@
        "source":"../../assets/north-sea.wav",
        "creditLocation":"https://freesound.org/people/klangfabrik/sounds/194209/",
        "creditAuthor":"klangfabrik"
+    },
+    {
+       "id":3,
+       "name":"Crickets",
+       "source":"../../assets/crickets.wav",
+       "creditLocation":"https://freesound.org/people/martypinso/sounds/22604/",
+       "creditAuthor":"martypinso"
     }
 ]
