@@ -1,4 +1,7 @@
-image: alpine-latest
+image: alpine:latest
+
+variables:
+  VERSION: 0.0.0
 
 stages:
   - test
