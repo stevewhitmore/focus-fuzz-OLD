@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'ff-sound-wrapper',
   templateUrl: './sound-wrapper.component.html',
-  styleUrls: ['./sound-wrapper.component.scss']
+  styleUrls: ['./sound-wrapper.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SoundWrapperComponent implements OnChanges {
   @Input() audioFile: any
@@ -31,12 +32,10 @@ export class SoundWrapperComponent implements OnChanges {
     } else {
       this.sound.pause()
     }
-    console.log(this.volume.value)
   }
 
   adjustVolume(slider: any) {
     this.sound.volume = this.volume.value / 100
-    console.log(this.volume.value)
   }
 
 }
