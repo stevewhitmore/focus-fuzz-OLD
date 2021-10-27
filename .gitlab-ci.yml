@@ -1,0 +1,9 @@
+image: alpine-latest
+
+stages:
+  - test
+  - deploy
+
+unit_tests:
+  stage: test
+  script: echo "Tests will happen here..."
