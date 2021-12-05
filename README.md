@@ -2,9 +2,7 @@
 
 ## Drown Out Distractions
 
-URL: <https://stevewhitmore.github.io/shush/>
-
-### Why?
+> *Development on this has stalled until I can set up a home server. Using the freesound.org API to download the sounds on app load is too slow and there are no good hosting providers that can accomodate Angular applications without paying way too much money.*
 
 There's this site I really like to use for drowning out noise called [asoftmurmur](https://asoftmurmur.com). I've been using it for years but I noticed a couple of things recently that caused some alarm.
 
