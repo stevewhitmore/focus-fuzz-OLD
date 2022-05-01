@@ -20,6 +20,7 @@ export class SoundWrapperComponent implements OnChanges {
     if (soundChanges && soundChanges.source) {
       console.log(soundChanges)
       this.sound = new Audio(this.audioFile.source)
+      this.sound.loop = true;
       this.soundName = this.audioFile.name
       this.volume.setValue( 50 )
     }
