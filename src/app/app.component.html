@@ -2,21 +2,23 @@
     <h1>Focus Fuzz</h1>
 </header>
 
-<!-- <button *ngIf="isPaused; else pauseButton" type="button" (click)="playPause()">
-    <svg viewBox="0 0 24 24">
-        <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-    </svg>
-</button>
-<ng-template #pauseButton>
-    <button type="button" (click)="playPause()">
+<section class="play-stop">
+    <button *ngIf="playStatus.isPaused; else pauseButton" type="button" (click)="playPause()">
         <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M18,18H6V6H18V18Z" />
+            <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
         </svg>
     </button>
-</ng-template> -->
+    <ng-template #pauseButton>
+        <button type="button" (click)="playPause()">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M18,18H6V6H18V18Z" />
+            </svg>
+        </button>
+    </ng-template>
+</section>
 
 <section class="sound-list">
     <div *ngFor="let file of audioFiles$ | async">
-        <ff-sound-wrapper [audioFile]="file"></ff-sound-wrapper>
+        <ff-sound-wrapper [audioFile]="file" [playStatus]="playStatus"></ff-sound-wrapper>
     </div>
 </section>

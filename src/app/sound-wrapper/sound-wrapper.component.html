@@ -1,17 +1,4 @@
-<section>
-    <button *ngIf="isPaused; else pauseButton" type="button" (click)="playPause()">
-        <svg viewBox="0 0 24 24">
-            <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-        </svg>
-    </button>
-    <ng-template #pauseButton>
-        <button type="button" (click)="playPause()">
-            <svg viewBox="0 0 24 24">
-                <path fill="currentColor" d="M18,18H6V6H18V18Z" />
-            </svg>
-        </button>
-    </ng-template>
-
+<div>
     <h2>{{soundName}}</h2>
 
     <input type="range" 
@@ -21,4 +8,4 @@
             [formControl]="volume">
     
     <p>[Source: {{audioFile.creditAuthor}} - {{audioFile.creditLocation}}]</p>
-</section>
+</div>

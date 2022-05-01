@@ -9,13 +9,17 @@ import { SoundService } from './services/sound.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  
-  audioFiles$: Observable<any> = new Observable()
+  playStatus = { isPaused: true };
+  audioFiles$: Observable<any> = new Observable();
 
   constructor(private soundService: SoundService) { }
 
   ngOnInit() {
     this.audioFiles$ = this.soundService.getSoundFiles();
+  }
+
+  playPause() {
+    this.playStatus = { isPaused: !this.playStatus.isPaused };
   }
 
 }

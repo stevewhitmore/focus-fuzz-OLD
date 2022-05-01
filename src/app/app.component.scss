@@ -15,6 +15,30 @@ h1, h2, p {
     color: #fff;
 }
 
-section.sound-list {
+button {
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+
+    svg {
+        width: 150px;
+        height: 150px;
+
+        path, rect {
+          transition: 0.5s all ease;
+          fill: #fff;
+        }
+    }
+}
+
+section.play-stop {
+    display: flex;
+    justify-content: center;
     margin-top: 5rem;
 }
+
+.sound-list {
+    display: flex;
+    justify-content: center;
+  }
