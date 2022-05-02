@@ -1,4 +1,4 @@
-image: alpine:latest
+image: node:16-alpine
 
 variables:
   VERSION: 0.0.1
