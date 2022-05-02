@@ -16,28 +16,30 @@ export class SoundWrapperComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['audioFile']) {
-      const audioFileChanges = changes['audioFile'].currentValue;
-      if (audioFileChanges && audioFileChanges.source) {
-        this.sound = new Audio(audioFileChanges.source);
-        this.sound.loop = true;
-        this.soundName = audioFileChanges.name;
-        this.volume.setValue(0);
-        this.sound.volume = 0;
-        
-        if (audioFileChanges.id === 1) {
-          this.volume.setValue(100);
-          this.sound.volume = 1;
-        }
-      }
+      this.setSoundProperties(changes['audioFile'].currentValue);
     }
 
-    if (changes['playStatus'].currentValue) {
-      if (changes['playStatus'].currentValue.isPaused) {
-        this.sound.pause();
-      } else {
-        this.sound.play();
+    this.togglePlayPause(changes['playStatus'].currentValue);
+  }
+
+  setSoundProperties(audioFileChanges: any) {
+    if (audioFileChanges && audioFileChanges.source) {
+      this.sound = new Audio(audioFileChanges.source);
+      this.sound.setAttribute('type', 'audio/wav');
+      this.sound.loop = true;
+      this.soundName = audioFileChanges.name;
+      this.volume.setValue(0);
+      this.sound.volume = 0;
+      
+      if (audioFileChanges.id === 1) {
+        this.volume.setValue(100);
+        this.sound.volume = 1;
       }
     }
+  }
+
+  togglePlayPause(playStatus: any) {
+    playStatus.isPaused ? this.sound.pause() : this.sound.play();
   }
 
   adjustVolume() {
