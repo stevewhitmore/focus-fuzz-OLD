@@ -12,7 +12,7 @@ unit_tests:
   script: echo "Tests will happen here..."
 
 pages:
-  stage: deploy_demo
+  stage: deploy
   script:
     - npm run gl-pages
   artifacts:
