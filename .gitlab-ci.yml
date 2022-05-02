@@ -4,6 +4,7 @@ variables:
   VERSION: 0.0.1
 
 stages:
+  - install
   - test
   - deploy
 
