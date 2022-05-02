@@ -46,3 +46,6 @@ Thumbs.db
 
 
 src/assets/*.wav
+!src/assets/focus.wav
+public
+icons

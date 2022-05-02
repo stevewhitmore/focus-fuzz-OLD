@@ -25,14 +25,13 @@ export class SoundWrapperComponent implements OnChanges {
         this.sound.volume = 0;
         
         if (audioFileChanges.id === 1) {
-          this.volume.setValue(50);
-          this.sound.volume = 0.50;
+          this.volume.setValue(100);
+          this.sound.volume = 1;
         }
       }
     }
 
     if (changes['playStatus'].currentValue) {
-      console.log(changes['playStatus'])
       if (changes['playStatus'].currentValue.isPaused) {
         this.sound.pause();
       } else {
@@ -41,9 +40,8 @@ export class SoundWrapperComponent implements OnChanges {
     }
   }
 
-  adjustVolume(slider: any) {
+  adjustVolume() {
     this.sound.volume = this.volume.value / 100
-    console.log(this.sound.volume)
   }
 
 }

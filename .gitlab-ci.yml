@@ -1,7 +1,7 @@
 image: alpine:latest
 
 variables:
-  VERSION: 0.0.0
+  VERSION: 0.0.1
 
 stages:
   - test
@@ -10,3 +10,11 @@ stages:
 unit_tests:
   stage: test
   script: echo "Tests will happen here..."
+
+pages:
+  stage: deploy_demo
+  script:
+    - npm run gl-pages
+  artifacts:
+    paths:
+      - public

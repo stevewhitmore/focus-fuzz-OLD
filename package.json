@@ -1,10 +1,11 @@
 {
   "name": "focus-fuzz",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "gl-pages": "ng build --output-path public --base-href /focus-fuzz/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
