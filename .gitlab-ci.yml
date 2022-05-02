@@ -19,9 +19,9 @@ install_dependencies:
   script:
     - npm ci --cache .npm --prefer-offline
 
-unit_tests:
-  stage: test
-  script: echo "Tests will happen here..."
+# unit_tests:
+#   stage: test
+#   script: echo "Tests will happen here..."
 
 pages:
   stage: deploy
