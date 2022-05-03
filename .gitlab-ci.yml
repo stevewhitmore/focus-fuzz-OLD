@@ -29,3 +29,4 @@ unit_tests:
     - apk add chromium
     - export CHROME_BIN=/usr/bin/chromium-browser
   script: npm run test-ci
+  allow_failure: true
