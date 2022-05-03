@@ -25,7 +25,6 @@ export class SoundWrapperComponent implements OnChanges {
   setSoundProperties(audioFileChanges: any) {
     if (audioFileChanges && audioFileChanges.source) {
       this.sound = new Audio(audioFileChanges.source);
-      this.sound.setAttribute('type', 'audio/wav');
       this.sound.loop = true;
       this.soundName = audioFileChanges.name;
       this.volume.setValue(0);
