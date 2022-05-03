@@ -1,27 +1,11 @@
-section {  
+div {  
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
 
-  button {
-      cursor: pointer;
-      box-shadow: none;
-      border: none;
-      background: transparent;
-
-      svg {
-          width: 150px;
-          height: 150px;
-
-          path, rect {
-            transition: 0.5s all ease;
-            fill: #fff;
-          }
-      }
-  }
-
-  h2 {
-
+  h2, p {
+    color: #fff;
   }
 }

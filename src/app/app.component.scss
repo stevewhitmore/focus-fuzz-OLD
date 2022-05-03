@@ -1,0 +1,45 @@
+header {
+    background: #1c1c1c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    padding: 1rem 0;
+}
+
+h1, h2, p {
+    text-align: center;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+
+    svg {
+        width: 150px;
+        height: 150px;
+
+        path, rect {
+          transition: 0.5s all ease;
+          fill: #fff;
+        }
+    }
+}
+
+section.play-stop {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0 2rem 0;
+    box-sizing: border-box;
+}
+
+.sound-list {
+    display: flex;
+    justify-content: center;
+  }
