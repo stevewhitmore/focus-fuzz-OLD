@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AudioFileModel, PlayStatusModel } from '../models';
 
 @Component({
   selector: 'ff-sound-wrapper',
@@ -8,11 +9,10 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SoundWrapperComponent implements OnChanges {
-  @Input() audioFile: any
-  @Input() playStatus: any;
-  soundName = 'No Name'
-  volume = new FormControl()
-  sound: any
+  @Input() audioFile!: AudioFileModel;
+  @Input() playStatus!: PlayStatusModel;
+  volume = new FormControl();
+  sound: HTMLAudioElement = new Audio();
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['audioFile']) {
@@ -26,7 +26,6 @@ export class SoundWrapperComponent implements OnChanges {
     if (audioFileChanges && audioFileChanges.source) {
       this.sound = new Audio(audioFileChanges.source);
       this.sound.loop = true;
-      this.soundName = audioFileChanges.name;
       this.volume.setValue(0);
       this.sound.volume = 0;
       
@@ -42,7 +41,7 @@ export class SoundWrapperComponent implements OnChanges {
   }
 
   adjustVolume() {
-    this.sound.volume = this.volume.value / 100
+    this.sound.volume = this.volume.value / 100;
   }
 
 }
