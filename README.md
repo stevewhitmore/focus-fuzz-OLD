@@ -8,7 +8,7 @@ There's this site I really like to use for drowning out noise called [asoftmurmu
 
 2. **It's closed source.** This means I have no idea what's actually happening within the app while I'm using it. I'm sure the creator of the app has nothing but good intentions but experience has taught me to trust open source above anything closed. Open source code is inherently more secure and trustworthy. Plus it has the added benefit of being forkable so if I get hit by a bus or I don't touch it for over 5 years someone else can pick up the torch.
 
-So, I copied it and made it my own with the added benefit of open sourcing it. It's not as sophisticated as the original but it suites my needs. I'll slowly add the missing features overtime but for now it will do.
+So, I copied it and made it my own with the added benefit of open sourcing it. It's not as sophisticated as the original but it suites my needs. I'll slowly add the missing features over time but for now it will do.
 
 ### Deployment
 
