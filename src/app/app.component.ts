@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AudioFileModel } from './models';
-import { PlayStatusModel } from './models/play-status.model';
+import { AudioFileModel, PlayStatusModel } from './models';
 import { SoundService } from './services/sound.service';
 
 @Component({
