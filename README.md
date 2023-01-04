@@ -1,5 +1,7 @@
 # FocusFuzz
 
+> ****Decommissioned. This project never got off the ground and is being abandoned in favor of a new effort. See the new and improved [focus fuzz](https://github.com/stevewhitmore/focus-fuzz)**
+
 ## Drown Out Distractions
 
 There's this site I really like to use for drowning out noise called [asoftmurmur](https://asoftmurmur.com). I've been using it for years but I noticed a couple of things recently that caused some alarm.
